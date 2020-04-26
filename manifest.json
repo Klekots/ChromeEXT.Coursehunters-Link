@@ -1,0 +1,19 @@
+{
+  "name": "Try Create Google Chrome Extension",
+  "version": "1.0",
+  "description": "Build an Extension!",
+  "permissions": ["storage", "bookmarks", "activeTab", "webNavigation"],
+  "content_scripts":[
+    {
+      "matches": ["https://coursehunter.net/*"],
+      "js": ["content.js"]
+    }
+  ],
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+  "browser_action":{
+  },
+  "manifest_version": 2
+}

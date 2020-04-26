@@ -1,8 +1,10 @@
 {
-  "name": "CH Fast Save",
-  "version": "1.0",
+  "name": "Coursehunters fast save",
+  "version": "1.1",
+  "short_name": "CH fast save",
   "description": "Fast video save in bookmarks",
-  "permissions": ["storage", "bookmarks", "activeTab", "webNavigation"],
+  "author": "Dmytro Klekots",
+  "permissions": ["storage", "bookmarks", "activeTab", "webNavigation", "tabs"],
   "content_scripts":[
     {
       "matches": ["https://coursehunter.net/*"],
@@ -14,6 +16,9 @@
     "persistent": false
   },
   "browser_action":{
+    "default_icon": "./assets/images/ch38.png",
+    "default_popup": "popup.html",
+    "default_title": "CH fast save"
   },
   "manifest_version": 2,
   "icons": { 

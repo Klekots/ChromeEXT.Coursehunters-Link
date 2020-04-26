@@ -1,17 +1,17 @@
-// chrome.bookmarks.create({'parentId': "1592",
-// 'title': data.title,
-// 'url': 'https://coursehunter.net/course/osnovy-programmirovaniya-na-python-s-napisaniem-telegram-bota'});
+// chrome.browserAction.setBadgeBackgroundColor({ color: [255, 0, 0, 255] });
+// chrome.browserAction.setBadgeText({text: "10+"});
 
-chrome.browserAction.onClicked.addListener((tab)=>{
-  console.log(tab);
-  chrome.tabs.sendMessage(tab.id, "Return video URL",(res)=>{
-    chrome.bookmarks.create({'parentId': "1592",
-    'title': `${tab.title} - ${res}`,
-    'url': tab.url});
-  });
+chrome.runtime.onMessage.addListener((msg) => {
+  if (msg.action === "Add new bookmark") {
+    const {
+      title,
+      videoURL,
+      URL
+    } = msg.payload;
+    chrome.bookmarks.create({
+      'parentId': "1592",
+      'title': `${title} - ${videoURL}`,
+      'url': URL
+    });
+  }
 });
-
-// "browser_action":{
-//   "default_popup": "popup.html",
-//   "default_title": "Test"
-// }

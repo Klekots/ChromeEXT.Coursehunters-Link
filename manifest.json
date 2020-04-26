@@ -1,7 +1,7 @@
 {
-  "name": "Try Create Google Chrome Extension",
+  "name": "CH Fast Save",
   "version": "1.0",
-  "description": "Build an Extension!",
+  "description": "Fast video save in bookmarks",
   "permissions": ["storage", "bookmarks", "activeTab", "webNavigation"],
   "content_scripts":[
     {
@@ -15,5 +15,12 @@
   },
   "browser_action":{
   },
-  "manifest_version": 2
+  "manifest_version": 2,
+  "icons": { 
+    "16": "./assets/images/ch16.png",
+    "19": "./assets/images/ch19.png",
+    "38": "./assets/images/ch38.png",
+    "48": "./assets/images/ch48.png",
+   "128": "./assets/images/ch128.png" 
+  }
 }

@@ -13,4 +13,10 @@ document.addEventListener('DOMContentLoaded',function(){
         chrome.tabs.query(params, gotTab);
         
     }, false);
+
+    document.querySelector("#inMainPage").addEventListener('click',()=>{
+        chrome.runtime.sendMessage({
+            action: "In Main Page"
+        })
+    })
 });

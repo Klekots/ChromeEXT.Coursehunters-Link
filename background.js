@@ -14,4 +14,9 @@ chrome.runtime.onMessage.addListener((msg) => {
       'url': URL
     });
   }
+  else if(msg.action === "In Main Page"){
+    chrome.tabs.update({
+      url: "https://coursehunters.net/"
+    });
+  }
 });
